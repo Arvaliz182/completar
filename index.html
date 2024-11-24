@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego de Completar </title>
+  <link rel="stylesheet" href="estilos.css">
+  <!-- Inclusión de MathJax para renderizar fórmulas LaTeX -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+  <!-- Pantalla de Inicio -->
+  <div id="inicio">
+    <h1>Juego de Completar </h1>
+    <button onclick="iniciarJuego()">Iniciar Juego</button>
+    <button onclick="mostrarInstrucciones()">Instrucciones</button>
+    <button onclick="mostrarRecursos()">Recursos</button>
+  </div>
+
+  <!-- Área de Juego -->
+  <div id="juego" style="display: none;">
+    <div id="pregunta"></div>
+    <div id="opcionesRespuesta"></div>
+    <button onclick="verificarRespuesta()">Enviar Respuesta</button>
+    <div id="retroalimentacion"></div>
+    <button onclick="siguientePregunta()" style="display: none;" id="btnSiguiente">Siguiente</button>
+  </div>
+
+  <!-- Pantalla de Resultado -->
+  <div id="resultado" style="display: none;">
+    <h2>Resultado Final</h2>
+    <p id="puntajeFinal"></p>
+    <button onclick="reiniciarJuego()">Jugar de Nuevo</button>
+  </div>
+
+  <!-- Ventana Modal de Instrucciones -->
+  <div id="instruccionesModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarInstrucciones()">&times;</span>
+      <h2>Instrucciones</h2>
+      <p>Completa los recuadros seleccionando las opciones correctas. Se te presentarán 15 preguntas seleccionadas al azar. Al final, podrás ver cuántas respuestas correctas tuviste.</p>
+    </div>
+  </div>
+
+  <!-- Ventana Modal de Recursos -->
+  <div id="recursosModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarRecursos()">&times;</span>
+      <h2>Recursos Visuales</h2>
+      <p>Puedes consultar los recursos visuales <a href="https://sites.google.com/pcpuma.acatlan.unam.mx/proyecto-final/recursos-visuales?authuser=0" target="_blank">aquí</a>.</p>
+    </div>
+  </div>
+
+  <!-- Inclusión del Archivo JavaScript -->
+  <script src="juegoCompletarFormulas.js"></script>
+</body>
+</html>
